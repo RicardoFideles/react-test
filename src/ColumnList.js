@@ -1,9 +1,10 @@
 import React from 'react';
 import If from './If';
 import './ColumnList.css';
+import PropTypes from 'prop-types'
 
 const ColumnList = ({ title, items = [], updateTask, addTask }) => {
-  const currentItems = items.filter(_ => _.status === title);
+const currentItems = items.filter(_ => _.status === title);
 
   return (
     <div className="column-list">
@@ -30,6 +31,10 @@ const ColumnList = ({ title, items = [], updateTask, addTask }) => {
       </ul>
     </div>
   );
+}
+
+ColumnList.propTypes = {
+  addTask : PropTypes.func.isRequired
 }
 
 export default ColumnList;
